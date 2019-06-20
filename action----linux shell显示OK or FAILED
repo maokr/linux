@@ -1,0 +1,12 @@
+如何在linux中输出如下：
+[root@maokr2 bin]$>action "fuck mao" /bin/false
+fuck mao                                                   [FAILED]
+[root@maokr2 bin]$>action "fuck mao" /bin/true
+fuck mao                                                   [  OK  ]
+
+
+步骤：
+1.    . /etc/rc.d/init.d/functions --运行一下这个脚本就能使用action命令
+2.使用action 
+--action "comments"   /bin/true   会显示OK
+--action "comments" /bin/false    会显示FAILED
