@@ -18,5 +18,13 @@ export 变量名
 对于个别用户的启动配置文件  ~/.bashrc和~/.profile
 对于全局用户的启动配置文件  etc/bashrc和etc/profile
 
-命令终端提示符：PS1  可以在bashrc文件中设置
+在bashrc中可以设置哪些东西
+1.命令终端提示符：PS1  可以在bashrc文件中设置
 如：
+2.命令别名
+alias 别名=command
+3.多命令组合的函数
+function functionname(){
+  command1
+  command2
+}
