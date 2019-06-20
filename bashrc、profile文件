@@ -1,1 +1,22 @@
+首先我们无论是登入linux交互界面或者执行linux脚本，其实都是在一个个的shell环境中来运行，那么当你以不同的用户，不同的方式打开一个shell环境，
+都会设置一个基本的shell的工作环境
 
+bashrc和profile的差异在于： 
+1. bashrc是在系统启动后就会自动运行。 
+2. profile是在用户登录后才会运行。
+3. 进行设置后，可运用source bashrc命令更新bashrc，也可运用source profile命令更新profile。
+PS：通常我们修改bashrc,有些linux的发行版本不一定有profile这个文件，本文用的系统是Ubuntu 15.10 
+4. /etc/profile中设定的变量(全局)的可以作用于任何用户，而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量，他们是"父子"关系
+
+1.全局变量与用户变量
+定义一个变量： 
+变量名=变量信息
+export 变量名
+
+两者的区别在于定义在不同的文件，两者的生效时机(source)不一样。
+
+对于个别用户的启动配置文件  ~/.bashrc和~/.profile
+对于全局用户的启动配置文件  etc/bashrc和etc/profile
+
+命令终端提示符：PS1  可以在bashrc文件中设置
+如：
