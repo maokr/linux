@@ -1,0 +1,49 @@
+curl---linux下的http命令行工具，作为网络交互工具，需要掌握
+
+-A/--user-agent <string> ：设置用户代理发送给服务器
+-b/--cookie <name=string/file> ：cookie字符串或文件读取位置
+
+-c/--cookie-jar <file> ：操作结束后把response的cookie信息写入到这个文件中
+curl -c cookie.txt https://www.cnblogs.com/fqfanqi/
+
+-C/--continue-at <offset> ：断点续转
+-D/--dump-header <file> ：把header信息写入到该文件中
+-e/--referer ：来源网址
+-f/--fail ：连接失败时不显示http错误
+-o/--output ：把输出写到该文件中
+-O/--remote-name ：把输出写到该文件中，保留远程文件的文件名
+-r/--range <range> ：检索来自HTTP/1.1或FTP服务器字节范围
+-s/--silent ：静音模式，不输出任何东西
+-T/--upload-file <file> 上传文件
+-u/--user <user[:password]> ：设置服务器的用户和密码
+-w/--write-out [format] ：什么输出完成后
+
+-x/--proxy <host[:port]> ：设置代理服务器访问(首先得是代理服务器)
+curl -x 192.168.100.100:1080 https://www.cnblogs.com/fqfanqi/
+-#/--progress-bar ：进度条显示当前的传送状态
+-I/--head ：仅返回头部信息，使用HEAD请求
+-v/--verbose ：小写的v参数，用于打印更多信息，包括发送的请求信息，这在调试脚本是特别有用
+-m/--max-time <seconds> 指定处理的最大时长
+-H/--header <header>： 指定请求头参数
+--connect-timeout <seconds> ：指定尝试连接的最大时长
+-d/--data/--data-ascii <data> ：指定POST的内容
+--retry <num> ：指定重试次数
+
+
+
+--1基本用法：curl http://192.168.45.102:10080/cm-6.1.0/  --返回页面的内容(HTML)
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /cm-6.1.0</title>
+ </head>
+ <body>
+<h1>Index of /cm-6.1.0</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.15 (CentOS) Server at 192.168.45.102 Port 10080</address>
+</body></html>
+
+--2只显示
