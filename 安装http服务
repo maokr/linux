@@ -1,0 +1,6 @@
+centos6.5安装环境
+1. yum install -y httpd
+2. 默认端口80，默认配置文件地址：/etc/httpd/conf/httpd.conf（可以更改端口等信息）
+3. 默认的文件访问地址是/var/www/html
+4.只要把内容放入上面目录就能在网络上访问到
+
