@@ -1,16 +1,30 @@
 curl---linux下的http命令行工具，作为网络交互工具，需要掌握
 
--A/--user-agent <string> ：设置用户代理发送给服务器
--b/--cookie <name=string/file> ：cookie字符串或文件读取位置
-
+-I/--head ：仅返回头部信息，使用HEAD请求
+-H/--header <header>： 指定请求头参数(多个请求头，可以指定多个-H)
+curl -X POST -H 'Content-Type: application/json'
+-b/--cookie <name=string/file> ：使用-b后指定的cookie信息或cookie文件
 -c/--cookie-jar <file> ：操作结束后把response的cookie信息写入到这个文件中
-curl -c cookie.txt https://www.cnblogs.com/fqfanqi/
+-o/--output ：把输出写到-o后面的文件中
+-X/--request：curl命令默认是get请求，使用-X后面可以制定其他请求类型(POST,DELETE等)
+-d/--data/--data-ascii <data> ：指定POST的内容，(get请求可以吧请求附在网址后面就行，而post请求需要分开)，看下面例子：
+get:  curl example.com/form.cgi?data=xxx
+post: curl -X POST --data "data=xxx" example.com/form.cgi （不需要编码）
+post: curl -X POST --data-urlencode "date=April 1" example.com/form.cgi （经过表单编码）
+
+-A/--user-agent <string> ：设置用户代理发送给服务器
+
+
+
+
 
 -C/--continue-at <offset> ：断点续转
 -D/--dump-header <file> ：把header信息写入到该文件中
 -e/--referer ：来源网址
 -f/--fail ：连接失败时不显示http错误
--o/--output ：把输出写到该文件中
+-I/--head ：仅返回头部信息，使用HEAD请求
+
+
 -O/--remote-name ：把输出写到该文件中，保留远程文件的文件名
 -r/--range <range> ：检索来自HTTP/1.1或FTP服务器字节范围
 -s/--silent ：静音模式，不输出任何东西
