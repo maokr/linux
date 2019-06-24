@@ -1,8 +1,13 @@
 curl---linux下的http命令行工具，作为网络交互工具，需要掌握
 
+
 -I/--head ：仅返回头部信息，使用HEAD请求
+-s/--silent ：静音模式，不输出任何东西
 -H/--header <header>： 指定请求头参数(多个请求头，可以指定多个-H)
 curl -X POST -H 'Content-Type: application/json'
+curl -i -H 'content-type: application/json' -X POST -d '{\"screencast\":{\"subject\":\"tools\"}}' http://localhost:3570/index.php
+请求头要和请求内容有对应关系
+
 -b/--cookie <name=string/file> ：使用-b后指定的cookie信息或cookie文件
 -c/--cookie-jar <file> ：操作结束后把response的cookie信息写入到这个文件中
 -o/--output ：把输出写到-o后面的文件中
@@ -11,6 +16,7 @@ curl -X POST -H 'Content-Type: application/json'
 get:  curl example.com/form.cgi?data=xxx
 post: curl -X POST --data "data=xxx" example.com/form.cgi （不需要编码）
 post: curl -X POST --data-urlencode "date=April 1" example.com/form.cgi （经过表单编码）
+-F: 实现post上传文件内容
 
 -A/--user-agent <string> ：设置用户代理发送给服务器
 
@@ -27,11 +33,11 @@ post: curl -X POST --data-urlencode "date=April 1" example.com/form.cgi （经�
 
 -O/--remote-name ：把输出写到该文件中，保留远程文件的文件名
 -r/--range <range> ：检索来自HTTP/1.1或FTP服务器字节范围
--s/--silent ：静音模式，不输出任何东西
+-s/--silent ：静音模式，不输出任何东西(只返回请求的有效内容，没有进度等额外信息)
 -T/--upload-file <file> 上传文件
 -u/--user <user[:password]> ：设置服务器的用户和密码
 -w/--write-out [format] ：什么输出完成后
-
+-k ：允许curl使用非安全的ssl连接并且传输数据（证书不受信）
 -x/--proxy <host[:port]> ：设置代理服务器访问(首先得是代理服务器)
 curl -x 192.168.100.100:1080 https://www.cnblogs.com/fqfanqi/
 -#/--progress-bar ：进度条显示当前的传送状态
