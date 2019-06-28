@@ -17,7 +17,7 @@ date +'%s%N' 产生一个19位随机数字
 
 
 4.使用UUID
-方法: cat /proc/sys/kernel/random/uuid
+方法: cat /proc/sys/kernel/random/uuid  ----》d678f5f6-c6ee-4961-904c-7378c07fcba8
 
 
 
