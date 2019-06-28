@@ -1,0 +1,28 @@
+linux产生随机数的6中方式：
+
+md5sum：可以在linux中生成MD5值，使用cut可以切割指定位数
+
+1.RANDOM:
+    这个变量是系统环境变量，使用的话直接使用 $RANDOM ,取值范围是0~32676
+    
+
+2.openssl rand
+openssl rand[-out file] [-randfile(s)] [-base64] [-hex] num ：产出数字与字母混合的随机数
+解释：num指定随机数的长度
+[-base64]/[-hex]：用于对产生的随机数进行编码，有时候指定的长度的随机数会显示为乱码
+
+3.date
+date +'%s%N' 产生一个19位随机数字
+
+
+
+4.使用UUID
+方法: cat /proc/sys/kernel/random/uuid
+
+
+
+5.不介绍
+
+
+
+6.不介绍
